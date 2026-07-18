@@ -31,6 +31,9 @@ class TestBinaryTree(unittest.TestCase):
     def test_exists_returns_false_for_missing_node(self):
         self.assertFalse(self.bt.exists(TreeNode("d")))
 
+    def test_exists_rejects_non_tree_node(self):
+        with self.assertRaises(BinTreeError):
+            self.bt.exists("a")
 
 if __name__ == "__main__":
     unittest.main()
