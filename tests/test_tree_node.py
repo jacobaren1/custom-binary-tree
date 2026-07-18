@@ -8,14 +8,14 @@ from tree_node import TreeNode
 
 class TestTreeNodeComparisonOperators(unittest.TestCase):
     def test_eq_compares_only_the_key_field(self):
-        left = TreeNode("hej", 1)
-        right = TreeNode("hej", 2)
+        left = TreeNode("a", 1)
+        right = TreeNode("a", 2)
 
         self.assertEqual(left, right)
 
     def test_eq_returns_false_for_nodes_with_different_keys(self):
-        left = TreeNode("hej", 1)
-        right = TreeNode("då", 2)
+        left = TreeNode("a", 1)
+        right = TreeNode("b", 2)
 
         self.assertNotEqual(left, right)
 
