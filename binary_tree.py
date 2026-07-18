@@ -40,7 +40,13 @@ class BinaryTree(object):
             print("Node already exists:", ref_node)
             return ref_node
 
-    def exists(self, node):
+    def exists(self, node: TreeNode):
+
+        if not isinstance(node, TreeNode):
+            raise BinTreeError(
+                f".exists() must take TreeNode as input, got {type(node)}"
+            )
+
         return self.exists_func( node, self.root )
 
     def exists_func(self, node: TreeNode, ref_node: Optional[TreeNode]) -> bool:
