@@ -1,5 +1,3 @@
-import unittest
-
 class TreeNode(object):
     """
     Represents a node in a binary tree.
