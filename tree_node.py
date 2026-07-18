@@ -1,4 +1,4 @@
-
+import unittest
 
 class TreeNode(object):
 
@@ -11,8 +11,11 @@ class TreeNode(object):
     def __str__(self):
         return f"TreeNode: {self.key}: {self.value}"
 
+    def __lt__(self, other):
+        return self.key < other.key
 
-if __name__ == "__main__":
+    def __eq__(self, other):
+        return self.key == other.key
 
-    my_node = TreeNode("hej")
-    print(my_node)
+    def __gt__(self, other):
+        return self.key > other.key
