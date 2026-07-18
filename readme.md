@@ -1,6 +1,6 @@
 # Custom Binary Tree
 
-A small Python practice project focused on building a binary tree node class and exploring Python class behavior, including custom comparison operators.
+A small Python practice project focused on building a binary tree node class, introducing a simple `BinaryTree` structure, and exploring Python class behavior with custom comparison operators.
 
 ## Summary
 This project is intended to reinforce core Python concepts such as:
@@ -8,6 +8,7 @@ This project is intended to reinforce core Python concepts such as:
 - class design
 - object attributes
 - custom comparison methods
+- recursive tree traversal and insertion
 - unit testing with `unittest`
 
 ## Project Structure
@@ -15,7 +16,9 @@ This project is intended to reinforce core Python concepts such as:
 custom-binary-tree/
 ├── .github/
 │   └── CODEOWNERS
+├── binary_tree.py
 ├── tests/
+│   ├── test_binary_tree.py
 │   └── test_tree_node.py
 ├── .gitignore
 ├── .venv/                 # local virtual environment
@@ -24,19 +27,20 @@ custom-binary-tree/
 ```
 
 ## Usage
-The main class is `TreeNode`, which stores a `key`, an optional `value`, and child references for a binary tree.
+The main classes are `TreeNode` and `BinaryTree`.
 
 ```python
 from tree_node import TreeNode
+from binary_tree import BinaryTree
 
-root = TreeNode("hej", 1)
-left = TreeNode("abc", 2)
-right = TreeNode("xyz", 3)
+bt = BinaryTree()
 
-root.left = left
-root.right = right
+bt.put(TreeNode("b"))
+bt.put(TreeNode("a"))
+bt.put(TreeNode("c"))
 
-print(root)
+print(bt.exists(TreeNode("a")))
+print(bt.exists(TreeNode("d")))
 ```
 
 ## Testing
@@ -48,5 +52,6 @@ python -m unittest discover -s tests -v
 
 ## Notes
 
-- The project currently uses a simple `TreeNode` implementation with custom ordering behavior based on the `key` field.
-- The repository includes a small test suite to validate the comparison operators.
+- `TreeNode` compares and orders nodes using its `key` field.
+- `BinaryTree` currently supports inserting nodes and checking whether a node exists.
+- The repository includes tests that validate both the comparison operators and the binary tree behavior.
