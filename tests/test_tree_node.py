@@ -3,8 +3,7 @@ import unittest
 import sys
 
 # --- Import from parent dir ---
-sys.path.append("../")
-from tree_node import TreeNode
+from CustomBinaryTree import BinaryTree, TreeNode, BinTreeError
 
 class TestTreeNodeComparisonOperators(unittest.TestCase):
     def test_eq_compares_only_the_key_field(self):
