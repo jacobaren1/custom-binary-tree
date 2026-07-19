@@ -1,10 +1,7 @@
 import unittest
 import sys
 
-sys.path.append("../")
-from tree_node import TreeNode
-from binary_tree import BinaryTree, BinTreeError
-
+from CustomBinaryTree import BinaryTree, TreeNode, BinTreeError
 
 class TestBinaryTree(unittest.TestCase):
     def setUp(self):

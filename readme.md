@@ -1,37 +1,28 @@
 # Custom Binary Tree
 
-A small Python practice project focused on building a binary tree node class, introducing a simple `BinaryTree` structure, and exploring Python class behavior with custom comparison operators.
+A small Python package that provides a simple binary search tree implementation using `TreeNode` and `BinaryTree`.
 
-## Summary
-This project is intended to reinforce core Python concepts such as:
+## Overview
+This project is designed as a lightweight practice repository for learning:
 
-- class design
-- object attributes
+- class design in Python
 - custom comparison methods
-- recursive tree traversal and insertion
+- recursive tree insertion and lookup
 - unit testing with `unittest`
+- packaging Python modules for import via a public namespace
 
-## Project Structure
-```text
-custom-binary-tree/
-├── .github/
-│   └── CODEOWNERS
-├── binary_tree.py
-├── tests/
-│   ├── test_binary_tree.py
-│   └── test_tree_node.py
-├── .gitignore
-├── .venv/                 # local virtual environment
-├── readme.md
-└── tree_node.py
+## Installation
+Install the package from the repository root in editable mode:
+
+```bash
+python -m pip install -e .
 ```
 
-## Usage
-The main classes are `TreeNode` and `BinaryTree`.
+## Quickstart
+After installation, you can import the package with:
 
 ```python
-from tree_node import TreeNode
-from binary_tree import BinaryTree
+from CustomBinaryTree import BinaryTree, TreeNode
 
 bt = BinaryTree()
 
@@ -43,8 +34,31 @@ print(bt.exists(TreeNode("a")))
 print(bt.exists(TreeNode("d")))
 ```
 
+## Package API
+The public package exports:
+
+- `BinaryTree`
+- `TreeNode`
+- `BinTreeError`
+
+## Project Structure
+```text
+custom-binary-tree/
+├── CustomBinaryTree/
+│   ├── __init__.py
+│   ├── binary_tree.py
+│   └── tree_node.py
+├── tests/
+│   ├── test_binary_tree.py
+│   ├── test_tree_node.py
+│   └── test_package_import.py
+├── pyproject.toml
+├── readme.md
+└── requirements.txt
+```
+
 ## Testing
-Run the unit test suite from the project root with:
+Run the full unit test suite from the project root:
 
 ```bash
 python -m unittest discover -s tests -v
@@ -52,6 +66,6 @@ python -m unittest discover -s tests -v
 
 ## Notes
 
-- `TreeNode` compares and orders nodes using its `key` field.
-- `BinaryTree` currently supports inserting nodes and checking whether a node exists.
-- The repository includes tests that validate both the comparison operators and the binary tree behavior.
+- `TreeNode` orders and compares nodes using the `key` field.
+- `BinaryTree` supports node insertion and membership checks.
+- The package is intentionally minimal and focused on clear, readable Python behavior.
