@@ -21,7 +21,7 @@ class TreeNode(object):
         Reference to the right child node.
     """
 
-    def __init__(self, key: ..., value:... = None):
+    def __init__(self, key: ..., value: ... = None):
         self.key = key
         self.value = value
         self.left = None
